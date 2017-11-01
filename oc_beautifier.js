@@ -4,6 +4,7 @@
 // @version      0.1
 // @description  Improves OC dashboard for mentors
 // @author       Tim G
+// @homepage     https://github.com/timoguic/oc_beautifier
 // @updateURL    https://raw.githubusercontent.com/timoguic/oc_beautifier/master/oc_beautifier.js
 // @downloadURL  https://raw.githubusercontent.com/timoguic/oc_beautifier/master/oc_beautifier.js
 // @match        http*://*openclassrooms.com/mentorship/*
