@@ -12,16 +12,21 @@
 
 (function() {
     'use strict';
-    // improve user profile
+
     // change height of mentor profile
     $('.mentorProfile').css('min-height', '100px');
-    $('.mentorProfile__content section').not('.mentorProfile__username').toggle();
+
+    // hide sections of the profile
+    var mentorProfileSectionElems = $('.mentorProfile__content section').not('.mentorProfile__username');
+    $(mentorProfileSectionElems).hide();
     $('.mentorProfile__username').click(function() {
-        $('.mentorProfile__content section').not('.mentorProfile__username').toggle();
+        $(mentorProfileSectionElems).toggle();
     });
+
     // hide the student list
-    $('table.crud-list').hide();
-    $('table.crud-list').siblings('h2').click(function() {
-        $('table.crud-list').toggle();
+    var studentListElem = $('div.mentorProfile').siblings('.spacer-big').find('table.crud-list');
+    $(studentListElem).hide();
+    $(studentListElem).siblings('h2').click(function() {
+        $(studentListElem).toggle();
     });
 })();
