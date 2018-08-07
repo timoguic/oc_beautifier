@@ -18,7 +18,7 @@
     $('div.oc-form__group').first().append('<label class="oc-form__row"><span class="oc-form__label-text"><button class="button button--secondary" id="showProfile">Get link</button></span><span class="oc-form__widget"><a href="#" id="showProfileLink"></a></span></label>');
     $('button#showProfile').click(function(e) {
         e.preventDefault();
-        optionElm = $('.oc-form__widget').find('span.autocomplete option').first();
+        var optionElm = $('.oc-form__widget').find('span.autocomplete option').first();
         var idStudent = optionElm.val();
         var studentName = optionElm.text().split(' ')
         var newLink = '/fr/mentorship/students/' + idStudent + '/dashboard';
