@@ -1,7 +1,7 @@
 # OC beautifier
 
-Use this script with TamperMonkey to make OC's dashboard look better when you are
-a (validating) mentor. Use at your own risk.
+Use this script with TamperMonkey extension or as a developer extension in Chrome. It makes OC's dashboard
+easier to use when you are a (validating) mentor. Use at your own risk.
 
 ## How to use
 ### Chrome extension
