@@ -5,8 +5,8 @@
 // @description  Creates a link to the dashboard of the student without having to create a 'soutenance' session
 // @author       Tim G
 // @homepage     https://github.com/timoguic/oc_beautifier
-// @updateURL    https://raw.githubusercontent.com/timoguic/oc_beautifier/master/oc_soutenances_enhancer.js
-// @downloadURL  https://raw.githubusercontent.com/timoguic/oc_beautifier/master/oc_soutenances_enhancer.js
+// @updateURL    https://raw.githubusercontent.com/timoguic/oc_beautifier/master/new_soutenance_enhancer.js
+// @downloadURL  https://raw.githubusercontent.com/timoguic/oc_beautifier/master/new_soutenance_enhancer.js
 // @match        http*://*openclassrooms.com/*mentorship/defense-sessions/new
 // @grant        none
 // ==/UserScript==
