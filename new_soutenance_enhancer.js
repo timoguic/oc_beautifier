@@ -1,7 +1,6 @@
 // ==UserScript==
-// @require http://code.jquery.com/jquery-3.2.1.min.js
-// @name         OC soutenances
-// @version      0.1
+// @name         OC planification soutenance
+// @version      0.2
 // @description  Creates a link to the dashboard of the student without having to create a 'soutenance' session
 // @author       Tim G
 // @homepage     https://github.com/timoguic/oc_beautifier
@@ -14,16 +13,45 @@
 (function() {
     'use strict';
 
-    // Add button
-    $('div.oc-form__group').first().append('<label class="oc-form__row"><span class="oc-form__label-text"><button class="button button--secondary" id="showProfile">Get link</button></span><span class="oc-form__widget"><a href="#" id="showProfileLink"></a></span></label>');
-    $('button#showProfile').click(function(e) {
-        e.preventDefault();
-        var optionElm = $('.oc-form__widget').find('span.autocomplete option').first();
-        var idStudent = optionElm.val();
-        var studentName = optionElm.text().split(' ')
-        var newLink = '/fr/mentorship/students/' + idStudent + '/dashboard';
-        console.log(idStudent);
-        $('#showProfileLink').attr('href', newLink).text(studentName[0] + ' ' + studentName[1]);
-        return false
-    });
+    // Span widget
+    const spanWidget = document.createElement('span')
+    spanWidget.classList.add('oc-form__widget')
+
+    const profileLink = document.createElement('a')
+    profileLink.id = 'showProfileLink'
+
+    spanWidget.appendChild(profileLink)
+
+    // Button
+    const myButton = document.createElement('button')
+    myButton.classList.add('button', 'button--secondary')
+    myButton.id = 'showProfile'
+    myButton.innerHTML = 'Get link'
+    myButton.addEventListener('click', (e) => {
+        e.preventDefault()
+        let optionElm = document.querySelector('.oc-form__widget span.autocomplete option');
+        let newLink = '/fr/mentorship/students/' + optionElm.value + '/dashboard';
+
+        var studentName = optionElm.text.split(' ')
+
+        profileLink.href = newLink
+        profileLink.innerHTML = studentName[0] + ' ' + studentName[1]
+    })
+
+    // Span button
+    const spanText = document.createElement('span')
+    spanText.classList.add('oc-form__label-text')
+
+    spanText.appendChild(myButton)
+
+    // New label
+    const myLabel = document.createElement('label')
+    myLabel.classList.add('oc-form__row')
+
+    myLabel.appendChild(spanText)
+    myLabel.appendChild(spanWidget)
+
+    // Form
+    const myForm = document.querySelector('div.oc-form__group')
+    myForm.appendChild(myLabel)
 })();

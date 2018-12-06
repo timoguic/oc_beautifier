@@ -1,7 +1,6 @@
 // ==UserScript==
-// @require http://code.jquery.com/jquery-3.2.1.min.js
-// @name         OC soutenances
-// @version      0.1
+// @name         OC CR soutenances
+// @version      0.2
 // @description  Creates a link to the dashboard of the student without having to create a 'soutenance' session
 // @author       Tim G
 // @homepage     https://github.com/timoguic/oc_beautifier
@@ -15,5 +14,17 @@
     'use strict';
 
     // Add content
-    $('iframe#project_session_comment_ifr body#tinymce').val('test')
+    var myElem = document.getElementById('project_session_comment')
+    if (myElem.value.length < 1) {
+        myElem.value = `
+<p><strong>Avis global & verdict sur le travail de l'étudiant:</strong></p>
+<p><strong>Avis sur les livrables:</strong></p>
+<p><strong>Avis sur la présentation:</strong></p>
+<p><strong>Avis sur la compréhension et la réalisation du projet:</strong></p>
+<p><strong>Points positifs:</strong></p>
+<p><ul><li>bien</li></ul></p>
+<p><strong>Axes d'amélioration:</strong></p>
+<p><ul><li>moins bien</li></ul></p>
+`
+    }
 })();
