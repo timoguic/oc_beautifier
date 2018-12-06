@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "OC Beautifier",
+    "description": "OpenClassrooms dashboard, improved.",
+    "version": "0.3",
+    "author": "Tim G",
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://openclassrooms.com/*/users/*/projects/*"],
+            "js": ["js/cr_soutenance_enhancer.js"],
+            "run_at": "document_end"
+        },
+        {
+            "matches": ["https://openclassrooms.com/*mentorship/defense-sessions/new"],
+            "js": ["js/new_soutenance_enhancer.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "activeTab"
+    ]
+}

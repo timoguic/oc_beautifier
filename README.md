@@ -4,6 +4,12 @@ Use this script with TamperMonkey to make OC's dashboard look better when you ar
 a (validating) mentor. Use at your own risk.
 
 ## How to use
+### Chrome extension
+* Open `chrome://extensions/`
+* Enable developer mode
+* Click 'Load unpacked' and select the `extensions/chrome_ext` folder
+
+### With TamperMonkey (slower)
 * Install the [TamperMonkey extension](https://tampermonkey.net/)
 * Open TamperMonkey dashboard
 * Go to 'Utilities' tab
