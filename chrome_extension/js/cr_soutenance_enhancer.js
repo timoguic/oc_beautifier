@@ -17,10 +17,15 @@ var myElem = document.querySelector('#projectSessionFormComment')
 var observer = new MutationObserver(function(mutationList) {
     for (var mutation of mutationList) {
         for (var child of mutation.addedNodes) {
-            var txtArea = child.querySelector('#project_session_comment')
-            if (!!txtArea) {
-                txtArea.value = TEMPLATE
-                observer.disconnect()
+            try {
+                var txtArea = child.querySelector('#project_session_comment')
+                if (!!txtArea) {
+                    txtArea.value = TEMPLATE
+                    observer.disconnect()
+                }
+            }
+            catch (err) {
+                // whatever
             }
         }
     }
