@@ -14,7 +14,7 @@
     'use strict';
 
     // Add content
-    var myElem = document.getElementById('project_session_comment')
+    var myElem = document.querySelector('#projectSessionFormComment .mce-edit-area')
     if (myElem.value.length < 1) {
         myElem.value = `
 <p><strong>Avis global & verdict sur le travail de l'étudiant:</strong></p>

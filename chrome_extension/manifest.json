@@ -7,16 +7,19 @@
     "browser_action": {
         "default_popup": "popup.html"
     },
+    "icons": {
+        "128": "img/icon.png"
+    },
     "content_scripts": [
         {
-            "matches": ["https://openclassrooms.com/*/users/*/projects/*"],
+            "matches": ["https://openclassrooms.com/*/users/*/projects/*/project-evaluation"],
             "js": ["js/cr_soutenance_enhancer.js"],
             "run_at": "document_end"
         },
         {
             "matches": ["https://openclassrooms.com/*mentorship/defense-sessions/new"],
             "js": ["js/new_soutenance_enhancer.js"],
-            "run_at": "document_end"
+            "run_at": "document_idle"
         }
     ],
     "permissions": [
